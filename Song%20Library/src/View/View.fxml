@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.TableView?>
+
+<GridPane 
+	xmlns="http://javafx.com/javafx/8.0.40"
+	xmlns:fx="http://javafx.com/fxml/1"
+	fx:controller="f2c.view.F2CController"
+	vgap="10" hgap="10">
+	
+	<ListView fx:id="listView"
+		GridPane.rowIndex="0"
+		GridPane.columnIndex="0"/>
+		
+	<TableView fx:id="tableView"
+		GridPane.rowIndex="0"
+		GridPane.columnIndex="1">
+			<rows>
+				<TableRow text="Song name"/>
+				<TableRow text="Artist"/>
+				<TableRow text="Year"/>
+				<TableRow text="Album"/>
+			</rows>
+	
+	<Text text="Fahrenheit" 
+		GridPane.valignment="BOTTOM"/>
+	
+	<Button fx:id="add" 
+		text="Add a song"
+		GridPane.rowIndex="1" 
+		GridPane.columnIndex="0" 
+		onAction="#addSong"/>
+		
+	<Button fx:id="edit" 
+		text="Edit song"
+		GridPane.rowIndex="1" 
+		GridPane.columnIndex="1" 
+		onAction="#editSong"/>
+	
+	<Button fx:id="delete" 
+		text="Delete song"
+		GridPane.rowIndex="1" 
+		GridPane.columnIndex="2" 
+		onAction="#deleteSong"/>
+		
+	<padding>
+		<Insets 
+			top="10" 
+			right="10" 
+			bottom="10" 
+			left="10"/>
+	</padding>
+	
+</GridPane>
