@@ -1,0 +1,34 @@
+package Model;
+import java.io.*;
+
+public class FileRead {
+	
+	private static BufferedReader inputFile;
+	
+	//reads input from a text file and returns a 
+	public static SongList createSongList (File fileName) throws IOException{
+		SongList list = new SongList();
+		try{
+			//read from file
+			FileReader x = new FileReader(fileName);
+			//add buffer for safety reasons
+			inputFile = new BufferedReader(x);
+			
+		}catch(FileNotFoundException ex){
+			System.out.println("YOU FUCKED UP");
+		}
+		
+		while(true){
+			//get line
+			String line = inputFile.readLine();
+			if(line == null){ //break when we hit the end of the file
+				break;
+			}
+			
+			System.out.println(line);
+		}
+		
+		inputFile.close();
+		return list;
+	} 
+}

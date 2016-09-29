@@ -1,0 +1,19 @@
+package Model;
+/*
+ * Node
+ */
+public class Node {
+	public String songName;
+	public String artist;
+	public String album;
+	public int year;
+	public Node next;
+	//constructor
+	public Node(String INsongName, String INartist, String INalbum, int INyear ){
+		songName = INsongName;
+		artist = INartist;
+		album = INalbum;
+		year = INyear;
+	}
+	
+}

@@ -1,0 +1,11 @@
+package Model;
+import java.io.*;
+
+public class FileRead {
+	//constructor
+	public static SongList createSongList (String fileName){
+		SongList list = new SongList();
+		
+		return list;
+	} 
+}

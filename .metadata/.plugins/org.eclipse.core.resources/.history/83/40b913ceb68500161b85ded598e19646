@@ -1,0 +1,32 @@
+package Model;
+/*
+ * Node
+ */
+public class Node {
+	//vars
+	private String songName;
+	private String artist;
+	private String album;
+	private int year;
+	public Node next;
+	//constructor
+	public Node(String INsongName, String INartist, String INalbum, int INyear ){
+		songName = INsongName;
+		artist = INartist;
+		album = INalbum;
+		year = INyear;
+	}
+	//methods to edit values
+	public void editYear(int newYear){
+		year = newYear;
+	} 
+	public void editArtist(String newArtist){
+		artist = newArtist;
+	} 
+	public void editAlbum(String newAlbum){
+		album = newAlbum;
+	} 
+	public void editSOng(int newSong){
+		songName = newSong;
+	} 
+}

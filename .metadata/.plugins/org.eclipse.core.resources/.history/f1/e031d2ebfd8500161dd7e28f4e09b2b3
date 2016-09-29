@@ -1,0 +1,14 @@
+package Model;
+
+import java.io.File;
+import java.io.IOException;
+
+public class TestClass {
+
+	public static void main(String[] args) throws IOException {
+		File file = new File("/home/amr/GitHub/SongLib/Song Library/src/Model")
+		SongList x = FileRead.createSongList(file);
+		
+	}
+
+}

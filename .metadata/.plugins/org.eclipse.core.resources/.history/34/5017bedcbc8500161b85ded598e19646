@@ -1,0 +1,19 @@
+package Model;
+
+/*
+ * SongList  is a class that implements the linked list data structure that
+ * will hold song information.
+ * 
+ * 
+ */
+
+public class SongList {
+	private Node Start;
+	private Node End;
+	//add method
+	public void add(){
+		
+		
+	}
+}
+

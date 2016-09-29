@@ -1,0 +1,10 @@
+package Model;
+
+public class TestClass {
+
+	public static void main(String[] args) {
+		SongList x = FileRead.createSongList("Test.txt");
+		
+	}
+
+}

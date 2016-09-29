@@ -1,0 +1,12 @@
+package Model;
+
+import java.io.IOException;
+
+public class TestClass {
+
+	public static void main(String[] args) throws IOException {
+		SongList x = FileRead.createSongList("Test.txt");
+		
+	}
+
+}
