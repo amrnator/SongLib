@@ -31,25 +31,9 @@ public class SongList {
 	}
 	/*
 	 * Deletion method
-	 * deletes an inputed node from the list
+	 * deletes an inputted node from the list
 	 */
 	public void delete(Node node){
-		Node target = node;
-		Node curr = start;
-		Node prev = null;
-		//check if the target is the start of the list
-		if(target == start){
-			//delete start
-			start = start.nextNode();
-			return;
-		}
-		//traverse this Songlist until we find the node we're looking for 
-		while(curr != target){
-			prev = curr;
-			curr = curr.nextNode();
-		}
-		//delete node
-		prev.next = curr.next;
 		
 	}
 	/*
@@ -87,6 +71,7 @@ public class SongList {
 	 * sorts SongList with bubble sort
 	 */
 	public void sort(){
+		int i;
 		Boolean swap;
 		
 		Node ptr;

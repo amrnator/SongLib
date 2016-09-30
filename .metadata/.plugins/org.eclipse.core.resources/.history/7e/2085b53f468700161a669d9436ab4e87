@@ -8,7 +8,7 @@ public class Node {
 	private String artist;
 	private String album;
 	private int year;
-	public Node next;
+	private Node next;
 	//constructors
 	public Node(String INsongName, String INartist){
 		songName = INsongName;

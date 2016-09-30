@@ -8,11 +8,9 @@ package Model;
 public class SongList {
 	private Node start;
 	private Node end;
+	
 	private int size = 0;
-	/*
-	 * addSong()
-	 * adds a song node to the list
-	 */
+	//add method
 	public void addSong(String songName, String artist, String album, int year){
 		//create Node
 		Node nd = new Node(songName, artist, album, year);
@@ -29,32 +27,8 @@ public class SongList {
 		}
 		size++;
 	}
-	/*
-	 * Deletion method
-	 * deletes an inputed node from the list
-	 */
-	public void delete(Node node){
-		Node target = node;
-		Node curr = start;
-		Node prev = null;
-		//check if the target is the start of the list
-		if(target == start){
-			//delete start
-			start = start.nextNode();
-			return;
-		}
-		//traverse this Songlist until we find the node we're looking for 
-		while(curr != target){
-			prev = curr;
-			curr = curr.nextNode();
-		}
-		//delete node
-		prev.next = curr.next;
-		
-	}
-	/*
-	 * traversal method
-	 */
+	
+	//traversal method
 	public void traverse(){
 		Node tmp = start;
 		//cycle through list
@@ -63,30 +37,23 @@ public class SongList {
 			tmp = tmp.nextNode();
 		}
 	}
-	/*
-	 * Get Methods:
-	 *returns first node in list
-	 */
+	//Get Methods:
+	//returns first node in list
 	public Node getStart(){
 		return start;
 	}
-	/*
-	 * returns last node in list
-	 */
+	//returns last node in list
 	public Node getEnd(){
 		return end;
 	}
-	/*
-	 * returns # of nodes in list
-	 */
+	//returns # of nodes in list
 	public int getSize(){
 		return size; 
 	}
 	
-	/*
-	 * sorts SongList with bubble sort
-	 */
+	//sorts SongList with bubble sort
 	public void sort(){
+		int i;
 		Boolean swap;
 		
 		Node ptr;
@@ -107,10 +74,7 @@ public class SongList {
 			lptr = ptr;
 		}while(swap);
 	}
-	/*
-	 * swaps values of nodes
-	 * only used in sort()
-	 */
+	//swaps values of nodes for sorting
 	private void swapNode(Node a, Node b){
 		String nameTemp = a.getSong();
 		String artistTemp = a.getArtist();
