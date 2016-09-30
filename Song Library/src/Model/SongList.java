@@ -25,6 +25,7 @@ public class SongList {
 			//set end as new node
 			end = nd;
 		}
+		size++;
 	}
 	
 	//traversal method
@@ -75,6 +76,18 @@ public class SongList {
 		b.setArtist(artistTemp);
 		b.setAlbum(albumTemp);
 		b.setYear(yearTemp);
+	}
+	//returns first node in list
+	public Node getStart(){
+		return start;
+	}
+	//returns last node in list
+	public Node getEnd(){
+		return end;
+	}
+	//returns # of nodes in list
+	public int getSize(){
+		return size; 
 	}
 }
 

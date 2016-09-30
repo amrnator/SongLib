@@ -8,8 +8,10 @@ public class TestClass {
 	public static void main(String[] args) throws IOException {
 		File file = new File("src/Test.txt");
 		SongList x = FileReadWrite.createSongList(file);
+		x.addSong("My", "Name's", "Amr", 1289);
 		x.sort();
 		x.traverse();
+		FileReadWrite.saveToFile(file, x);
 	}
 	
 }

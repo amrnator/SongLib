@@ -46,7 +46,17 @@ public class FileReadWrite {
 		list.sort();
 		return list;
 	}
-	public static void saveToFile(File file, SongList list){
-	//TODO add functionality for writing list to file	
+	public static void saveToFile(File file, SongList list) throws FileNotFoundException, UnsupportedEncodingException{
+		//TODO add functionality for writing list to file	
+		//make a PrintWriter out of the file (This overwrites the file)
+		PrintWriter writer = new PrintWriter(file, "UTF8");
+		
+		//traverse the list, printing each node's info to the file
+		Node temp = list.getStart();
+		while(temp != null){
+			writer.println(temp.getSong() + "," + temp.getArtist() + "," + temp.getAlbum() + "," + temp.getYear());
+			temp = temp.nextNode();
+		}
+		writer.close();
 	}
 }
