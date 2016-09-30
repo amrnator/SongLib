@@ -1,9 +1,7 @@
 package Model;
 import java.io.*;
 import java.util.StringTokenizer;
-/*
- * Load and save from and to files
- */
+
 public class FileReadWrite {
 	
 	private static BufferedReader inputFile;
@@ -43,11 +41,11 @@ public class FileReadWrite {
 		list.sort();
 		return list;
 	}
-	//writes the inputs in a Songlist to a file
 	public static void saveToFile(File file, SongList list) throws FileNotFoundException, UnsupportedEncodingException{
 		//TODO add functionality for writing list to file	
 		//make a PrintWriter out of the file (This overwrites the file)
 		PrintWriter writer = new PrintWriter(file, "UTF8");
+		
 		//traverse the list, printing each node's info to the file
 		Node temp = list.getStart();
 		while(temp != null){
