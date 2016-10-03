@@ -22,8 +22,8 @@
    <children>
       <TextField text="Song Name" />
       <TextField text="Artist" GridPane.rowIndex="1" />
-      <TextField text="Album" GridPane.rowIndex="2" />
-      <TextField text="Year" GridPane.rowIndex="3" />
+      <TextField text="Album (Optional)" GridPane.rowIndex="2" />
+      <TextField text="Year (Optional)" GridPane.rowIndex="3" />
       <TextField GridPane.columnIndex="1" />
       <TextField GridPane.columnIndex="1" GridPane.rowIndex="1" />
       <TextField GridPane.columnIndex="1" GridPane.rowIndex="2" />
