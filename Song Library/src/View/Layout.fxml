@@ -6,43 +6,42 @@
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 
-
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="485.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.60" xmlns:fx="http://javafx.com/fxml/1">
    <children>
       <Label layoutX="358.0" layoutY="219.0" prefHeight="17.0" prefWidth="53.0" text="Song List" />
-      <ListView id="listView" layoutX="14.0" layoutY="31.0" prefHeight="163.0" prefWidth="148.0" />
+      <ListView fx:id="listView" layoutX="14.0" layoutY="31.0" prefHeight="163.0" prefWidth="148.0" />
       <Label layoutX="300.0" layoutY="14.0" text="Add Song" />
       <Label layoutX="468.0" layoutY="14.0" text="Edit Song" />
-      <Button id="deleteSong" layoutX="37.0" layoutY="194.0" mnemonicParsing="false" text="Delete" />
+      <Button fx:id="deleteButton" layoutX="37.0" layoutY="194.0" mnemonicParsing="false" onAction="#delete" text="Delete" />
       <Label layoutX="168.0" layoutY="42.0" text="Song Name" />
       <Label layoutX="170.0" layoutY="74.0" text="Artist" />
       <Label layoutX="170.0" layoutY="104.0" text="Album (Optional)" />
       <Label layoutX="169.0" layoutY="134.0" text="Year (Optional)" />
-      <TextField id="addName" layoutX="262.0" layoutY="38.0" />
-      <TextField id="addArtist" layoutX="262.0" layoutY="70.0" />
-      <TextField id="addAlbum" layoutX="262.0" layoutY="100.0" />
-      <TextField id="addYear" layoutX="262.0" layoutY="130.0" />
-      <TextField id="editName" layoutX="419.0" layoutY="38.0" />
-      <TextField id="editArtist" layoutX="419.0" layoutY="70.0" />
-      <TextField id="editAlbum" layoutX="419.0" layoutY="100.0" />
-      <TextField id="editYear" layoutX="419.0" layoutY="130.0" />
-      <Button id="addSong" layoutX="280.0" layoutY="169.0" mnemonicParsing="false" text="Add" />
-      <Button id="editSong" layoutX="448.0" layoutY="169.0" mnemonicParsing="false" text="Edit" />
+      <TextField fx:id="addName" layoutX="262.0" layoutY="38.0" />
+      <TextField fx:id="addArtisit" layoutX="262.0" layoutY="70.0" />
+      <TextField fx:id="addAlbum" layoutX="262.0" layoutY="100.0" />
+      <TextField fx:id="addYear" layoutX="262.0" layoutY="130.0" />
+      <TextField fx:id="editName" layoutX="419.0" layoutY="38.0" />
+      <TextField fx:id="editArtist" layoutX="419.0" layoutY="70.0" />
+      <TextField fx:id="editAlbum" layoutX="419.0" layoutY="100.0" />
+      <TextField fx:id="editYear" layoutX="419.0" layoutY="130.0" />
+      <Button fx:id="addSongButton" layoutX="280.0" layoutY="169.0" mnemonicParsing="false" onAction="#addSong" text="Add" />
+      <Button fx:id="editSongButton" layoutX="448.0" layoutY="169.0" mnemonicParsing="false" onAction="#editSong" text="Edit" />
       <Label layoutX="231.0" layoutY="264.0" text="Selected Song Info" />
       <Label layoutX="231.0" layoutY="303.0" text="Song Name" />
       <Label layoutX="231.0" layoutY="339.0" text="Artist" />
       <Label layoutX="231.0" layoutY="381.0" text="Album" />
       <Label layoutX="234.0" layoutY="424.0" text="Year" />
-      <Label id="name" layoutX="355.0" layoutY="303.0" prefHeight="17.0" prefWidth="159.0" />
-      <Label id="artist" layoutX="355.0" layoutY="339.0" prefHeight="17.0" prefWidth="159.0" />
-      <Label id="album" layoutX="355.0" layoutY="381.0" prefHeight="17.0" prefWidth="159.0" />
-      <Label id="year" layoutX="355.0" layoutY="424.0" prefHeight="17.0" prefWidth="159.0" />
+      <Label fx:id="name" layoutX="355.0" layoutY="303.0" prefHeight="17.0" prefWidth="159.0" />
+      <Label fx:id="artist" layoutX="355.0" layoutY="339.0" prefHeight="17.0" prefWidth="159.0" />
+      <Label fx:id="album" layoutX="355.0" layoutY="381.0" prefHeight="17.0" prefWidth="159.0" />
+      <Label fx:id="year" layoutX="355.0" layoutY="424.0" prefHeight="17.0" prefWidth="159.0" />
       <Label layoutX="75.0" layoutY="264.0" text="Message Dialog" />
-      <Label id="message" layoutX="19.0" layoutY="303.0" prefHeight="17.0" prefWidth="205.0" />
-      <Button id="undoAdd" layoutX="329.0" layoutY="169.0" mnemonicParsing="false" text="Undo" />
-      <Button id="undoEdit" layoutX="493.0" layoutY="169.0" mnemonicParsing="false" text="Undo" />
+      <Label fx:id="messageDialog" layoutX="19.0" layoutY="303.0" prefHeight="17.0" prefWidth="205.0" />
+      <Button fx:id="undoAddButton" layoutX="329.0" layoutY="169.0" mnemonicParsing="false" onAction="#undoAdd" text="Undo" />
+      <Button fx:id="undoEditButton" layoutX="493.0" layoutY="169.0" mnemonicParsing="false" onAction="#undoEdit" text="Undo" />
       <Label layoutX="53.0" layoutY="14.0" text="Song Library " />
-      <Button id="undoDelete" layoutX="97.0" layoutY="194.0" mnemonicParsing="false" text="Undo" />
-      <Button id="close" layoutX="513.0" layoutY="441.0" mnemonicParsing="false" text="Close" />
+      <Button fx:id="undoDeleteButton" layoutX="97.0" layoutY="194.0" mnemonicParsing="false" onAction="#undoDelete" text="Undo" />
+      <Button fx:id="closeButton" layoutX="513.0" layoutY="441.0" mnemonicParsing="false" onAction="#close" text="Close" />
    </children>
 </AnchorPane>
