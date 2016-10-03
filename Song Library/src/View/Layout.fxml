@@ -12,7 +12,7 @@
       <ListView fx:id="listView" layoutX="14.0" layoutY="31.0" prefHeight="163.0" prefWidth="148.0" />
       <Label layoutX="300.0" layoutY="14.0" text="Add Song" />
       <Label layoutX="468.0" layoutY="14.0" text="Edit Song" />
-      <Button fx:id="deleteButton" layoutX="37.0" layoutY="194.0" mnemonicParsing="false" onAction="#delete" text="Delete" />
+      <Button fx:id="deleteButton" layoutX="37.0" layoutY="194.0" mnemonicParsing="false" onAction="#deleteSong" text="Delete" />
       <Label layoutX="168.0" layoutY="42.0" text="Song Name" />
       <Label layoutX="170.0" layoutY="74.0" text="Artist" />
       <Label layoutX="170.0" layoutY="104.0" text="Album (Optional)" />
