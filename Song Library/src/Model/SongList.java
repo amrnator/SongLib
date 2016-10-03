@@ -53,15 +53,19 @@ public class SongList {
 		
 	}
 	/*
-	 * traversal method
+	 * search method
 	 */
-	public void traverse(){
+	public Node search(String name, String artist){
 		Node tmp = start;
 		//cycle through list
 		while(tmp != null){
-			System.out.println(tmp.getSong());
+			if(tmp.getSong().equals(name) && tmp.getArtist().equals(artist)){
+				break;
+			}
 			tmp = tmp.nextNode();
 		}
+		return tmp;
+		
 	}
 	/*
 	 * Get Methods:

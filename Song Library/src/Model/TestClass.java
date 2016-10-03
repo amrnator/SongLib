@@ -10,7 +10,6 @@ public class TestClass {
 		SongList x = FileReadWrite.createSongList(file);
 		x.addSong("My", "Name's", "Amr", 1289);
 		x.sort();
-		x.traverse();
 		FileReadWrite.saveToFile(file, x);
 		x.delete(x.getStart().next);
 	}

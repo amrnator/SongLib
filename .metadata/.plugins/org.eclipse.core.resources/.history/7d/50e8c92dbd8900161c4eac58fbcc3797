@@ -1,0 +1,49 @@
+package control;
+
+import javafx.event.ActionEvent;
+import javafx.fxml.FXML;
+import javafx.scene.control.Button;
+import javafx.scene.control.Label;
+import javafx.scene.control.ListView;
+import javafx.scene.control.TextField; 
+
+public class Controller {
+	//add FXML widgets
+	//BUTTONS
+	@FXML Button deleteButton;
+	@FXML Button undoDeleteButton;
+	@FXML Button addSongButton;
+	@FXML Button undoAddButton;
+	@FXML Button editSongButton;
+	@FXML Button undoEditButton;
+	@FXML Button closeButton;
+	
+	//Song List
+	@FXML ListView<String> listView;
+	
+	//Text Fields
+	@FXML TextField addName;
+	@FXML TextField editName;
+	@FXML TextField addArtist;
+	@FXML TextField editArtist;
+	@FXML TextField addAlbum;
+	@FXML TextField editAlbum;
+	@FXML TextField addYear;
+	@FXML TextField editYear;
+
+	//Labels
+	@FXML Label messageDialog;
+	@FXML Label name;
+	@FXML Label artist;
+	@FXML Label album;
+	@FXML Label year;
+
+
+	//add Song to Songlist
+	public void addSong(){
+		
+	}
+	
+	
+	
+}
