@@ -1,0 +1,18 @@
+package application;
+
+import javafx.application.Application;
+import javafx.fxml.FXMLLoader;
+import javafx.stage.Stage;
+
+public class Mainapp extends Application {
+
+	@Override
+	public void start(Stage primaryStage) {
+		FXMLLoader loader = new FXMLLoader();
+		loader.setLocation(getClass().getResource("/f2c/view/F2C.fxml"));;
+	}
+
+	public static void main(String[] args) {
+		launch(args);
+	}
+}
