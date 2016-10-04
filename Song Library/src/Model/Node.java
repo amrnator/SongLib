@@ -7,14 +7,14 @@ public class Node {
 	private String songName;
 	private String artist;
 	private String album;
-	private int year;
+	private String year;
 	public Node next;
 	//constructors
 	public Node(String INsongName, String INartist){
 		songName = INsongName;
 		artist = INartist;
 	}
-	public Node(String INsongName, String INartist, String INalbum, int INyear ){
+	public Node(String INsongName, String INartist, String INalbum, String INyear ){
 		songName = INsongName;
 		artist = INartist;
 		album = INalbum;
@@ -29,7 +29,7 @@ public class Node {
 		return next;
 	}
 	//Get Methods
-	public int getYear(){
+	public String getYear(){
 		return year;
 	} 
 	public String getArtist(){
@@ -42,7 +42,7 @@ public class Node {
 		return songName;
 	} 
 	//Set Methods
-	public void setYear(int newYear){
+	public void setYear(String newYear){
 		year = newYear;
 	} 
 	public void setArtist(String newArtist){

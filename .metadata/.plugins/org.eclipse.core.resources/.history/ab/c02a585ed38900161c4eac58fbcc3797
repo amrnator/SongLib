@@ -1,0 +1,60 @@
+package Model;
+import java.io.*;
+import java.util.StringTokenizer;
+/*
+ * Load and save from and to files
+ */
+public class FileReadWrite {
+	
+	private static BufferedReader inputFile;
+	
+	//reads input from a text file and returns a Songlist
+	public static SongList createSongList () throws IOException {
+		//vars
+		SongList list = new SongList();
+		
+		try{
+			//read from file
+			File fileName = new File("SaveFile"); 
+			FileReader x = new FileReader(fileName);
+			//add buffer for safety reasons
+			inputFile = new BufferedReader(x);
+			
+		}catch(FileNotFoundException ex){
+			System.out.println("YOU FUCKED UP");
+		}
+		
+		while(true){
+			//get line
+			String line = inputFile.readLine();
+			if(line == null){ //break when we hit the end of the file
+				break;
+			}
+			//tokenize the string
+			StringTokenizer st = new StringTokenizer(line, ",");
+			//add components to list
+			//TODO allow for null input for album and year
+			if(st.countTokens() == 4){	
+				list.addSong(st.nextToken(), st.nextToken(), st.nextToken(), st.nextToken());
+			}
+		}
+		//close file
+		inputFile.close();
+		//sort list before returning
+		list.sort();
+		return list;
+	}
+	//writes the inputs in a Songlist to a file
+	public static void saveToFile(File file, SongList list) throws FileNotFoundException, UnsupportedEncodingException{
+		//TODO add functionality for writing list to file	
+		//make a PrintWriter out of the file (This overwrites the file)
+		PrintWriter writer = new PrintWriter(file, "UTF8");
+		//traverse the list, printing each node's info to the file
+		Node temp = list.getStart();
+		while(temp != null){
+			writer.println(temp.getSong() + "," + temp.getArtist() + "," + temp.getAlbum() + "," + temp.getYear());
+			temp = temp.nextNode();
+		}
+		writer.close();
+	}
+}

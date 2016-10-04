@@ -18,7 +18,7 @@
       <Label layoutX="170.0" layoutY="104.0" text="Album (Optional)" />
       <Label layoutX="169.0" layoutY="134.0" text="Year (Optional)" />
       <TextField fx:id="addName" layoutX="262.0" layoutY="38.0" />
-      <TextField fx:id="addArtisit" layoutX="262.0" layoutY="70.0" />
+      <TextField fx:id="addArtist" layoutX="262.0" layoutY="70.0" />
       <TextField fx:id="addAlbum" layoutX="262.0" layoutY="100.0" />
       <TextField fx:id="addYear" layoutX="262.0" layoutY="130.0" />
       <TextField fx:id="editName" layoutX="419.0" layoutY="38.0" />

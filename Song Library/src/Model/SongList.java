@@ -13,7 +13,7 @@ public class SongList {
 	 * addSong()
 	 * adds a song node to the list
 	 */
-	public void addSong(String songName, String artist, String album, int year){
+	public void addSong(String songName, String artist, String album, String year){
 		//create Node
 		Node nd = new Node(songName, artist, album, year);
 		//connect node appropriately
@@ -119,7 +119,7 @@ public class SongList {
 		String nameTemp = a.getSong();
 		String artistTemp = a.getArtist();
 		String albumTemp = a.getAlbum();
-		int yearTemp = a.getYear();
+		String yearTemp = a.getYear();
 		//put vals in a
 		a.setSong(b.getSong());
 		a.setArtist(b.getArtist());

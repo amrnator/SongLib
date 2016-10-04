@@ -1,89 +1,126 @@
 package control;
+import java.io.File;
+import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
+
+import Model.FileReadWrite;
+import Model.SongList;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
 import javafx.scene.control.TextField;
+import javafx.stage.Stage;
 
 
 public class Controller {
+	//FXML vars
+    @FXML
+     ResourceBundle resources;
 
     @FXML
-    private ResourceBundle resources;
+     URL location;
 
     @FXML
-    private URL location;
+     TextField addAlbum;
 
     @FXML
-    private TextField addAlbum;
+     TextField addArtist;
 
     @FXML
-    private TextField addArtisit;
+     TextField addName;
 
     @FXML
-    private TextField addName;
+     Button addSongButton;
 
     @FXML
-    private Button addSongButton;
+     TextField addYear;
 
     @FXML
-    private TextField addYear;
+     Label album;
 
     @FXML
-    private Label album;
+     Label artist;
 
     @FXML
-    private Label artist;
+     Button closeButton;
 
     @FXML
-    private Button closeButton;
+     Button deleteButton;
 
     @FXML
-    private Button deleteButton;
+     TextField editAlbum;
 
     @FXML
-    private TextField editAlbum;
+     TextField editArtist;
 
     @FXML
-    private TextField editArtist;
+     TextField editName;
 
     @FXML
-    private TextField editName;
+     Button editSongButton;
 
     @FXML
-    private Button editSongButton;
+     TextField editYear;
 
     @FXML
-    private TextField editYear;
+     ListView<String> listView;
+ 
+    
 
     @FXML
-    private ListView<?> listView;
+     Label messageDialog;
 
     @FXML
-    private Label messageDialog;
+     Label name;
 
     @FXML
-    private Label name;
+     Button undoAddButton;
 
     @FXML
-    private Button undoAddButton;
+     Button undoDeleteButton;
 
     @FXML
-    private Button undoDeleteButton;
+     Button undoEditButton;
 
     @FXML
-    private Button undoEditButton;
+     Label year;
+  
+private ObservableList<String> obsList;
+    
+    public void start(Stage mainStage){
+    	obsList = FXCollections.observableArrayList();
+    	listView.setItems(obsList);
+    	listView.getSelectionModel().select(0);
+    	listView.getSelectionModel().selectedItemProperty().addListener(
+    			(obs, oldVal, newVal) ->
+    				showItem(mainStage));
+    	
+    }
+    
+    private void showItem(Stage mainStage){
+    	
+    }
 
-    @FXML
-    private Label year;
-
-
+    //SOngList data structure
+    public SongList generatelist(){
+	    try{
+	    SongList list = FileReadWrite.createSongList();
+	    return list;
+	    }catch(IOException e){
+	    	throw new RuntimeException(e);
+	    }   
+    }
+    
+    SongList list = generatelist();
+    
     @FXML
     void addSong(ActionEvent event) {
-    	
+    	list.addSong(addName.getText(), addArtist.getText(), addAlbum.getText(), addYear.getText());
     }
 
     @FXML
@@ -113,7 +150,7 @@ public class Controller {
     @FXML
     void initialize() {
         assert addAlbum != null : "fx:id=\"addAlbum\" was not injected: check your FXML file 'Layout.fxml'.";
-        assert addArtisit != null : "fx:id=\"addArtisit\" was not injected: check your FXML file 'Layout.fxml'.";
+        assert addArtist != null : "fx:id=\"addArtisit\" was not injected: check your FXML file 'Layout.fxml'.";
         assert addName != null : "fx:id=\"addName\" was not injected: check your FXML file 'Layout.fxml'.";
         assert addSongButton != null : "fx:id=\"addSongButton\" was not injected: check your FXML file 'Layout.fxml'.";
         assert addYear != null : "fx:id=\"addYear\" was not injected: check your FXML file 'Layout.fxml'.";
