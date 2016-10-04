@@ -1,86 +1,139 @@
 package control;
-
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.UnsupportedEncodingException;
-
-import Model.FileReadWrite;
-import Model.Node;
-import Model.SongList;
+import java.net.URL;
+import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
 import javafx.scene.control.TextField;
-import javafx.stage.Stage; 
+
 
 public class Controller {
-	//add FXML widgets
-	//BUTTONS
-	@FXML Button deleteButton;
-	@FXML Button undoDeleteButton;
-	@FXML Button addSongButton;
-	@FXML Button undoAddButton;
-	@FXML Button editSongButton;
-	@FXML Button undoEditButton;
-	@FXML Button closeButton;
-	
-	//Song List
-	@FXML ListView<String> listView;
-	
-	//Text Fields
-	@FXML TextField addName;
-	@FXML TextField editName;
-	@FXML TextField addArtist;
-	@FXML TextField editArtist;
-	@FXML TextField addAlbum;
-	@FXML TextField editAlbum;
-	@FXML TextField addYear;
-	@FXML TextField editYear;
 
-	//Labels
-	@FXML Label messageDialog;
-	@FXML Label name;
-	@FXML Label artist;
-	@FXML Label album;
-	@FXML Label year;
+    @FXML
+    private ResourceBundle resources;
+
+    @FXML
+    private URL location;
+
+    @FXML
+    private TextField addAlbum;
+
+    @FXML
+    private TextField addArtisit;
+
+    @FXML
+    private TextField addName;
+
+    @FXML
+    private Button addSongButton;
+
+    @FXML
+    private TextField addYear;
+
+    @FXML
+    private Label album;
+
+    @FXML
+    private Label artist;
+
+    @FXML
+    private Button closeButton;
+
+    @FXML
+    private Button deleteButton;
+
+    @FXML
+    private TextField editAlbum;
+
+    @FXML
+    private TextField editArtist;
+
+    @FXML
+    private TextField editName;
+
+    @FXML
+    private Button editSongButton;
+
+    @FXML
+    private TextField editYear;
+
+    @FXML
+    private ListView<?> listView;
+
+    @FXML
+    private Label messageDialog;
+
+    @FXML
+    private Label name;
+
+    @FXML
+    private Button undoAddButton;
+
+    @FXML
+    private Button undoDeleteButton;
+
+    @FXML
+    private Button undoEditButton;
+
+    @FXML
+    private Label year;
 
 
-	//add Song to Songlist
-	public void addSong(SongList list){
-		
-		list.addSong(addName.getText(), addArtist.getText(), addAlbum.getText(), Integer.parseInt(addYear.getText()));
-		updateList(list);
-	}
-	
-	//delete selected song
-	public void delete(SongList list){
-		Node n =list.search(name.getText(), artist.getText());
-		list.delete(n);
-		updateList(list);
-	}
-	
-	/*
-	 * close method
-	 * Write SongList to file, then close app
-	 */
-	public void close(SongList list, File file) throws FileNotFoundException, UnsupportedEncodingException{
-		FileReadWrite.saveToFile(file, list);
-		//now close app
-		Stage stage = (Stage) closeButton.getScene().getWindow();
-	    stage.close();
-	}
-	
-	//update the library list after a change, sort the list and print it to the UI
-	public void updateList(SongList list){
-		//sort list
-		list.sort();
-		//TODO rewrite list on UI
-	}
-	
-	
-	
-	
-	
+    @FXML
+    void addSong(ActionEvent event) {
+    }
+
+    @FXML
+    void close(ActionEvent event) {
+    }
+
+    @FXML
+    void deleteSong(ActionEvent event) {
+    }
+
+    @FXML
+    void editSong(ActionEvent event) {
+    }
+
+    @FXML
+    void undoAdd(ActionEvent event) {
+    }
+
+    @FXML
+    void undoDelete(ActionEvent event) {
+    }
+
+    @FXML
+    void undoEdit(ActionEvent event) {
+    }
+
+    @FXML
+    void initialize() {
+        assert addAlbum != null : "fx:id=\"addAlbum\" was not injected: check your FXML file 'Layout.fxml'.";
+        assert addArtisit != null : "fx:id=\"addArtisit\" was not injected: check your FXML file 'Layout.fxml'.";
+        assert addName != null : "fx:id=\"addName\" was not injected: check your FXML file 'Layout.fxml'.";
+        assert addSongButton != null : "fx:id=\"addSongButton\" was not injected: check your FXML file 'Layout.fxml'.";
+        assert addYear != null : "fx:id=\"addYear\" was not injected: check your FXML file 'Layout.fxml'.";
+        assert album != null : "fx:id=\"album\" was not injected: check your FXML file 'Layout.fxml'.";
+        assert artist != null : "fx:id=\"artist\" was not injected: check your FXML file 'Layout.fxml'.";
+        assert closeButton != null : "fx:id=\"closeButton\" was not injected: check your FXML file 'Layout.fxml'.";
+        assert deleteButton != null : "fx:id=\"deleteButton\" was not injected: check your FXML file 'Layout.fxml'.";
+        assert editAlbum != null : "fx:id=\"editAlbum\" was not injected: check your FXML file 'Layout.fxml'.";
+        assert editArtist != null : "fx:id=\"editArtist\" was not injected: check your FXML file 'Layout.fxml'.";
+        assert editName != null : "fx:id=\"editName\" was not injected: check your FXML file 'Layout.fxml'.";
+        assert editSongButton != null : "fx:id=\"editSongButton\" was not injected: check your FXML file 'Layout.fxml'.";
+        assert editYear != null : "fx:id=\"editYear\" was not injected: check your FXML file 'Layout.fxml'.";
+        assert listView != null : "fx:id=\"listView\" was not injected: check your FXML file 'Layout.fxml'.";
+        assert messageDialog != null : "fx:id=\"messageDialog\" was not injected: check your FXML file 'Layout.fxml'.";
+        assert name != null : "fx:id=\"name\" was not injected: check your FXML file 'Layout.fxml'.";
+        assert undoAddButton != null : "fx:id=\"undoAddButton\" was not injected: check your FXML file 'Layout.fxml'.";
+        assert undoDeleteButton != null : "fx:id=\"undoDeleteButton\" was not injected: check your FXML file 'Layout.fxml'.";
+        assert undoEditButton != null : "fx:id=\"undoEditButton\" was not injected: check your FXML file 'Layout.fxml'.";
+        assert year != null : "fx:id=\"year\" was not injected: check your FXML file 'Layout.fxml'.";
+
+
+    }
+
 }
